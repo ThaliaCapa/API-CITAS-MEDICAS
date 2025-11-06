@@ -21,7 +21,7 @@ class UsuariosModel
     public static function ObtnerUsuarioId(int $id)
     {
         try {
-            $resultado = DB::select('SELECT * FROM usuarios WHERE id = ?', [$id]);
+            $resultado = DB::select('SELECT * FROM obtnerusarioporid(?)', [$id]);
             return $resultado;
         } catch (\Exception $e) {
             throw new \Exception('Error al obtener el usuario por ID: ' . $e->getMessage());
