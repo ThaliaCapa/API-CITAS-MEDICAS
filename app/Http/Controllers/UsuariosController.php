@@ -9,6 +9,16 @@ use Illuminate\Routing\Controller;
 
 class UsuariosController extends Controller
 {
+    public function ListarUsuarios()
+    {
+        try {
+            $resultado = UsuariosLogic::ListarUsuarios();
+
+            return ApiResponse::success($resultado, 'Usuarios obtenidos correctamente', 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al listar los usuarios en el controlador: ' . $e->getMessage()], 500);
+        }
+    }
     public function ObtnerUsuarioId(Request $request)
     {
         try {

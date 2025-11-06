@@ -6,6 +6,17 @@ use Illuminate\Support\Facades\DB;
 
 class UsuariosModel
 {
+    //Obtener todos los usuarios
+    public static function ListarUsuarios()
+    {
+        try {
+            $resultado = DB::select('SELECT * FROM listarusuarios()');
+            return $resultado;
+        } catch (\Exception $e) {
+            throw new \Exception('Error al obtener los usuarios: ' . $e->getMessage());
+        }
+    }
+
     //Obtener usuario por ID
     public static function ObtnerUsuarioId(int $id)
     {

@@ -6,6 +6,16 @@ use App\Models\UsuariosModel;
 
 class UsuariosLogic
 {
+    public static function ListarUsuarios()
+    {
+        try {
+            $usuarios = UsuariosModel::ListarUsuarios();
+            //Lógica adicional si es necesario
+            return $usuarios;
+        } catch (\Exception $e) {
+            throw new \Exception('Error al listar los usuarios en la lógica: ' . $e->getMessage());
+        }
+    }
     public static function ObtnerUsuarioId(int $id)
     {
         try {
