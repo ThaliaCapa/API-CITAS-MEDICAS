@@ -18,3 +18,6 @@ use App\Http\Controllers\UsuariosController;
 // 🔹 Tus rutas personalizadas
 Route::get('/usuario', [UsuariosController::class, 'ObtnerUsuarioId']);
 Route::post('/crear-usuario', [UsuariosController::class, 'CrearUsuario']);
+
+
+//Cambio
