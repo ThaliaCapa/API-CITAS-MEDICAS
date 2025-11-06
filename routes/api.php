@@ -17,9 +17,11 @@ use App\Http\Controllers\UsuariosController;
 
 // 🔹 Tus rutas personalizadas
 //Rutas de Usuarios
-Route::get('/usuarios', [UsuariosController::class, 'ListarUsuarios']);
-Route::get('/usuario', [UsuariosController::class, 'ObtnerUsuarioId']);
-Route::post('/crear-usuario', [UsuariosController::class, 'CrearUsuario']);
+Route::get('/usuarios', [UsuariosController::class, 'ListarUsuarios']);//Listar todos usuarios
+Route::get('/usuario', [UsuariosController::class, 'ObtnerUsuarioId']);//Obtener usuario por ID
+Route::post('/crear-usuario', [UsuariosController::class, 'CrearUsuario']);//Crear usuario
+Route::put('/actualizar-usuario', [UsuariosController::class, 'ActualizarUsuario']);//Actualizar usuario
+Route::delete('/eliminar-usuario', [UsuariosController::class, 'EliminarUsuario']);//Eliminar usuario
 
 
 //Cambio

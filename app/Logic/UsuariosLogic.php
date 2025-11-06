@@ -42,4 +42,26 @@ class UsuariosLogic
             throw new \Exception('Error al crear el usuario en la lógica: ' . $e->getMessage());
         }
     }
+
+    //Actualizar usuario
+    public static function ActualizarUsuario(int $id, string $correo, string $contrasena, int $estado)
+    {
+        try {
+            $usuarioActualizado = UsuariosModel::ActualizarUsuario($id, $correo, $contrasena, $estado);
+            //Validaciones adicionales o lógica de negocio
+            return $usuarioActualizado;
+        } catch (\Exception $e) {
+            throw new \Exception('Error al actualizar el usuario en la lógica: ' . $e->getMessage());
+        }
+    }
+
+    //Eliminar usuario
+    public static function EliminarUsuario(int $id){
+        try {
+            $resultado = UsuariosModel::EliminarUsuario($id);
+            return $resultado;
+        } catch (\Exception $e) {
+            throw new \Exception('Error al eliminar el usuario en la lógica: ' . $e->getMessage());
+        }
+    }
 }

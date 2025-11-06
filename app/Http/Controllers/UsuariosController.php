@@ -59,4 +59,45 @@ class UsuariosController extends Controller
             return response()->json(['error' => 'Error al crear el usuario en el controlador: ' . $e->getMessage()], 500);
         }
     }
+
+    //Actualizar usuario
+    public function ActualizarUsuario(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => 'required|integer',
+                'correo' => 'required|email',
+                'contrasena' => 'required|string',
+                'estado' => 'required|integer'
+            ]);
+
+            $id = $request->input('id');
+            $correo = $request->input('correo');
+            $contrasena = $request->input('contrasena');
+            $estado = $request->input('estado');
+
+            $usuarioActualizado = UsuariosLogic::ActualizarUsuario($id, $correo, $contrasena, $estado);
+
+            return ApiResponse::success($usuarioActualizado, 'Usuario actualizado correctamente', 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al actualizar el usuario en el controlador: ' . $e->getMessage()], 500);
+        }
+    }
+
+    //Eliminar usuario
+    public function EliminarUsuario(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => 'required|integer'
+            ]);
+            $id = $request->input('id');
+
+            $resultado = UsuariosLogic::EliminarUsuario($id);
+
+            return ApiResponse::success($resultado, 'Usuario eliminado correctamente', 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al eliminar el usuario en el controlador: ' . $e->getMessage()], 500);
+        }
+    }
 }
