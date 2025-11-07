@@ -16,6 +16,8 @@ class UsuariosLogic
             throw new \Exception('Error al listar los usuarios en la lógica: ' . $e->getMessage());
         }
     }
+
+
     public static function ObtnerUsuarioId(int $id)
     {
         try {

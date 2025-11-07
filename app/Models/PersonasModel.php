@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Support\Facades\DB;
 
-class PersonaModel
+class PersonasModel
 {
     //Obtener persona por ID
     public static function ObtenerPersonaId(int $id)
@@ -16,6 +16,25 @@ class PersonaModel
             throw new \Exception('Error al obtener la persona por ID: ' . $e->getMessage());
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Registrar nueva persona
     public static function CrearPersona($numero_documento, $apellido_paterno, $apellido_materno, $nombres, $fecha_nacimiento, $telefono, $genero, $sede, $idEspecialidad, $idTipoDocumento, $idRol, $idUsuario, $idUsuarioCreacion)
