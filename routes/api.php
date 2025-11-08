@@ -31,6 +31,7 @@ Route::delete('/eliminar-usuario', [UsuariosController::class, 'EliminarUsuario'
 
 //Rutas de Personas
 Route::get('/persona', [PersonasController::class, 'ObtenerPersonaId']);//Obtener usuario por ID
+Route::post('/crear-persona', [PersonasController::class, 'CrearPersona']);//Crear nueva persona
 
 
 //Rutas de Citas
