@@ -20,6 +20,8 @@ use App\Http\Controllers\ListaOpcionesController;
 |
 */
 
+
+
 // 🔹 Tus rutas personalizadas
 //Rutas de Usuarios
 Route::get('/usuarios', [UsuariosController::class, 'ListarUsuarios']); //Listar todos usuarios
@@ -30,8 +32,11 @@ Route::delete('/eliminar-usuario', [UsuariosController::class, 'EliminarUsuario'
 
 
 //Rutas de Personas
+Route::get('/personas', [PersonasController::class, 'ListarPersonas']);//Listar todas las personas
 Route::get('/persona', [PersonasController::class, 'ObtenerPersonaId']);//Obtener usuario por ID
 Route::post('/crear-persona', [PersonasController::class, 'CrearPersona']);//Crear nueva persona
+Route::put('/actualizar-persona', [PersonasController::class, 'ActualizarPersona']);//Actualizar persona
+Route::delete('/eliminar-persona', [PersonasController::class, 'EliminarPersona']);//Eliminar persona
 
 
 //Rutas de Citas
