@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 
 class UsuariosController extends Controller
 {
+    //listar usuarios
     public function ListarUsuarios()
     {
         try {
@@ -19,6 +20,8 @@ class UsuariosController extends Controller
             return response()->json(['error' => 'Error al listar los usuarios en el controlador: ' . $e->getMessage()], 500);
         }
     }
+
+    //Obtener usuario por ID
     public function ObtnerUsuarioId(Request $request)
     {
         try {
@@ -35,6 +38,7 @@ class UsuariosController extends Controller
         }
     }
 
+    //Crear un nuevo usuario
     public function CrearUsuario(Request $request)
     {
         try {

@@ -40,7 +40,11 @@ Route::delete('/eliminar-persona', [PersonasController::class, 'EliminarPersona'
 
 
 //Rutas de Citas
+Route::get('/citas', [CitasController::class, 'ListarCita']);//Listar todas las citas
 Route::get('/cita', [CitasController::class, 'ObtenerCitaId']);//Obtener usuario por ID
+Route::post('/crear-cita', [CitasController::class, 'CrearCita']);//Crear nueva cita
+Route::put('/actualizar-cita', [CitasController::class, 'CrearCita']);//Actualizar cita
+Route::delete('/eliminar-cita', [CitasController::class, 'EliminarCita']);//Eliminar cita
 
 
 //Rutas de Listas

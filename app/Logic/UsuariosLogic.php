@@ -6,6 +6,7 @@ use App\Models\UsuariosModel;
 
 class UsuariosLogic
 {
+    //listar usuarios
     public static function ListarUsuarios()
     {
         try {
@@ -17,7 +18,7 @@ class UsuariosLogic
         }
     }
 
-
+    //Obtener usuario por ID
     public static function ObtnerUsuarioId(int $id)
     {
         try {
@@ -33,6 +34,7 @@ class UsuariosLogic
         }
     }
 
+    //Crear un nuevo usuario
     public static function CrearUsuario(?int $id, string $correo, string $contrasena, int $estado)
     {
         try {
@@ -60,6 +62,7 @@ class UsuariosLogic
     //Eliminar usuario
     public static function EliminarUsuario(int $id){
         try {
+            
             $resultado = UsuariosModel::EliminarUsuario($id);
             return $resultado;
         } catch (\Exception $e) {

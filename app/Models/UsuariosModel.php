@@ -43,7 +43,7 @@ class UsuariosModel
     public static function ActualizarUsuario(int $id, string $correo, string $contrasena, int $estado)
     {
         try {
-            $resultado = DB::select('SELECT * FROM crearusuario(?,?,?,?)', [$id, $correo, $contrasena, $estado]);//La funcion tiene funcionalidad de editar si es que recibe el id
+            $resultado = DB::select('SELECT * FROM crearusuario(?,?,?,?)', [$id, $correo, $contrasena, $estado]); //La funcion tiene funcionalidad de editar si es que recibe el id
 
             return $resultado; // retorna 1 si se actualizó correctamente
         } catch (\Exception $e) {
@@ -51,13 +51,12 @@ class UsuariosModel
         }
     }
 
-
     //Eliminar usuario
     public static function EliminarUsuario(int $id)
     {
         try {
             $resultado = DB::select('SELECT * FROM eliminarusuario(?)', [$id]);
-            return $resultado; //retorna el mensaje de la base de datos
+            return $resultado;
         } catch (\Exception $e) {
             throw new \Exception('Error al eliminar el usuario: ' . $e->getMessage());
         }
