@@ -32,27 +32,36 @@ Route::delete('/eliminar-usuario', [UsuariosController::class, 'EliminarUsuario'
 
 
 //Rutas de Personas
-Route::get('/personas', [PersonasController::class, 'ListarPersonas']);//Listar todas las personas
-Route::get('/persona', [PersonasController::class, 'ObtenerPersonaId']);//Obtener usuario por ID
-Route::post('/crear-persona', [PersonasController::class, 'CrearPersona']);//Crear nueva persona
-Route::put('/actualizar-persona', [PersonasController::class, 'ActualizarPersona']);//Actualizar persona
-Route::delete('/eliminar-persona', [PersonasController::class, 'EliminarPersona']);//Eliminar persona
+Route::get('/personas', [PersonasController::class, 'ListarPersonas']); //Listar todas las personas
+Route::get('/persona', [PersonasController::class, 'ObtenerPersonaId']); //Obtener usuario por ID
+Route::post('/crear-persona', [PersonasController::class, 'CrearPersona']); //Crear nueva persona
+Route::put('/actualizar-persona', [PersonasController::class, 'ActualizarPersona']); //Actualizar persona
+Route::delete('/eliminar-persona', [PersonasController::class, 'EliminarPersona']); //Eliminar persona
 
 
 //Rutas de Citas
-Route::get('/citas', [CitasController::class, 'ListarCita']);//Listar todas las citas
-Route::get('/cita', [CitasController::class, 'ObtenerCitaId']);//Obtener usuario por ID
-Route::post('/crear-cita', [CitasController::class, 'CrearCita']);//Crear nueva cita
-Route::put('/actualizar-cita', [CitasController::class, 'CrearCita']);//Actualizar cita
-Route::delete('/eliminar-cita', [CitasController::class, 'EliminarCita']);//Eliminar cita
+Route::get('/citas', [CitasController::class, 'ListarCita']); //Listar todas las citas
+Route::get('/cita', [CitasController::class, 'ObtenerCitaId']); //Obtener usuario por ID
+Route::post('/crear-cita', [CitasController::class, 'CrearCita']); //Crear nueva cita
+Route::put('/actualizar-cita', [CitasController::class, 'CrearCita']); //Actualizar cita
+Route::delete('/eliminar-cita', [CitasController::class, 'EliminarCita']); //Eliminar cita
 
 
 //Rutas de Listas
-Route::get('/lista', [ListasController::class, 'ObtenerListaId']);//Obtener usuario por ID
+Route::get('/listas', [ListasController::class, 'ListarListas']); //Listar todas las listas
+Route::get('/lista', [ListasController::class, 'ObtenerListaId']); //Obtener usuario por ID
+Route::post('/crear-lista', [ListasController::class, 'CrearLista']); //Crear nueva lista
+Route::put('/actualizar-lista', [ListasController::class, 'ActualizarLista']); //Actualizar lista
+Route::delete('/eliminar-lista', [ListasController::class, 'EliminarLista']); //Eliminar lista
 
 
 //Rutas de Horarios
-Route::get('/horario', [HorarioController::class, 'ObtenerHorarioId']);//Obtener horario por ID
+Route::get('/horarios', [HorarioController::class, 'ListarHorarios']); //Listar todos los horarios
+Route::get('/horario', [HorarioController::class, 'ObtenerHorarioId']); //Obtener horario por ID
+Route::post('/crear-horario', [HorarioController::class, 'CrearHorario']); //Crear nuevo horario
+Route::put('/actualizar-horario', [HorarioController::class, 'ActualizarHorario']); //Actualizar horario
+Route::delete('/eliminar-horario', [HorarioController::class, 'EliminarHorario']); //Eliminar horario
+
 
 
 //Rutas de ListaOpciones
