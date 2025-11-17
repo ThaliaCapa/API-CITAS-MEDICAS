@@ -20,4 +20,15 @@ class ListaOpcionesLogic
             throw new \Exception('Error al obtener la lista por ID en la lógica: ' . $e->getMessage());
         }
     }
+
+    //crear lista de opciones
+    public static function CrearLista(int $id, string $nombre, int $estado, int $idLista)
+    {
+        try {
+            $nuevaLista = ListaOpciones::CrearLista($id, $nombre, $estado, $idLista);
+            return $nuevaLista;
+        } catch (\Exception $e) {
+            throw new \Exception('Error al crear la lista de opciones en la lógica: ' . $e->getMessage());
+        }
+    }
 }

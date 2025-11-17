@@ -66,3 +66,4 @@ Route::delete('/eliminar-horario', [HorarioController::class, 'EliminarHorario']
 
 //Rutas de ListaOpciones
 Route::get('/lista-opciones', [ListaOpcionesController::class, 'ObtenerListaId']);//Obtener lista por ID
+Route::get('/crear-lista-opciones', [ListaOpcionesController::class, 'CrearLista']);//Crear lista de opciones
